@@ -1,19 +1,33 @@
-### Payfully Test React+Redux
+### Spotifly
 
+Tiny app using React to fetch data from spotify, You can check the live version on https://spotifly1.herokuapp.com/ 
 
-Create​ ​an​ ​application​ ​using​ ​​`create-react-app​​` ​that​ ​​ ​will​ ​use​ ​the​ ​​Spotify​ ​Web​ ​API​​ ​with​ ​3​ ​different routes,​ ​the​ ​first​ ​one​ ​should​ ​display​ ​the​ ​user​ ​authentication​ ​to​ ​gain​ ​access​ ​there​ ​and​ ​be​ ​able​ ​to perform​ ​queries,​ ​to​ ​understand​ ​this​ ​process​ ​you​ ​can​ ​follow​ ​the​ t​​he utorial​.
+# Requirements 
 
-1. First​ ​view​ ​should​ ​show a login button:
-2. The​ ​Second​ ​view​ ​should​ ​allow​ ​the​ ​user​ ​to​ ​search​ ​music​ ​in​ ​Spotify​ ​using​ ​the​ ​search​ ​endpoint described​ ​here​,​ It​ ​should​ ​display​ ​the​ ​first​ ​10​ ​results​ ​for​ ​a​ ​user's​ ​search​ ​and​ ​if​ ​there​ ​are​ ​not​ ​results​ ​it​ ​should​ ​not display​ ​the​ ​table,​ ​instead​ ​should​ ​display​ ​a​ ​'No​ ​results'​ ​message.
-3. The​ ​third​ ​view​ ​should​ ​allow​ ​the​ ​user​ ​to​ ​view​ ​the​ ​current​ ​track​ ​being​ ​played​ ​with​ ​the authenticated​ ​user​ ​account.
+* Nodejs
+* Redux
 
+# Instalation and development
 
-Please​ ​have​ ​in​ ​mind:
-● You​ ​can​ ​suggest​ ​improvements​ ​to​ ​this​ ​interface​ ​in​ ​order​ ​to​ ​improve​ ​the​ ​user​ ​experience
-● A​ ​basic​ ​CSS​ ​is​ ​required,​ ​however​ ​the​ ​use​ ​of​ ​a​ ​framework​ ​of​ ​your​ ​preference​ ​is
-suggested
-● The​ ​second​ ​and​ ​third​ ​view​ ​should​ ​be​ ​authenticated​ ​views,​ ​so​ ​just​ ​authenticated​ ​users
-would​ ​be​ ​able​ ​to​ ​see​ ​them
-● A​ ​basic​ ​documentation​ ​should​ ​be​ ​attached​ ​describing​ ​the​ ​project​ ​structure,​ ​nothing​ ​too
-fancy,​ ​just​ ​a​ ​short​ ​text​ ​explaining​ ​those​ ​detail.
-● You​ ​should​ ​use​ ​Redux​ ​to​ ​manage​ ​all​ ​the​ ​application​ ​state
+1. Install dependencies with `$ npm install`
+2. Create an `.env` file project's root, set the following env vars
+
+      REDIRECT_URL=http://localhost:3000/spotify/callback
+      CLIENT_ID=YourSpotifyClientID
+      CLIENT_SECRET=YourSpotifyClientSecret
+      ENVIRONMENT=development
+      PORT=3000
+
+3. Start the server `npm start`
+4. Open your browser on `http://localhost:3000`
+
+# Deployment 
+
+1. Build the project for production `$ npm run build`
+2. Be sure to commit `src/public/client.min.js` and deploy it to your server
+3. Export the environment variables, be sure to set `ENVIRONMENT=production`
+4. on your server, run `node app.js` 
+
+![alt](https://raw.githubusercontent.com/rderoldan1/spotifly/imgs/1.png)
+![alt](https://raw.githubusercontent.com/rderoldan1/spotifly/imgs/2.png)
+![alt](https://raw.githubusercontent.com/rderoldan1/spotifly/imgs/3.png)
