@@ -5,7 +5,7 @@ Tiny app using React to fetch data from spotify, You can check the live version 
 # Requirements 
 
 * Nodejs
-* Redux
+* Npm
 
 # Instalation and development
 
