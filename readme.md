@@ -12,11 +12,11 @@ Tiny app using React to fetch data from spotify, You can check the live version 
 1. Install dependencies with `$ npm install`
 2. Create an `.env` file project's root, set the following env vars
 
-      REDIRECT_URL=http://localhost:3000/spotify/callback
-      CLIENT_ID=YourSpotifyClientID
-      CLIENT_SECRET=YourSpotifyClientSecret
-      ENVIRONMENT=development
-      PORT=3000
+       REDIRECT_URL=http://localhost:3000/spotify/callback
+       CLIENT_ID=YourSpotifyClientID
+       CLIENT_SECRET=YourSpotifyClientSecret
+       ENVIRONMENT=development
+       PORT=3000
 
 3. Start the server `npm start`
 4. Open your browser on `http://localhost:3000`
