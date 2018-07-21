@@ -16,7 +16,9 @@ var config = {
   output: {
     path: BUILD_DIR,
     filename: "client.min.js",
-    publicPath: '/'
+    publicPath: '/',
+    hotUpdateChunkFilename: 'hot/hot-update.js',
+    hotUpdateMainFilename: 'hot/hot-update.json'
   },
 
   module : {

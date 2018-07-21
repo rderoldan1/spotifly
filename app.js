@@ -21,29 +21,13 @@ app.use('/spotify', spotify);
 
 app.use('*', express.static(__dirname + '/src'));
 
+console.log(config.app)
 if (config.app.environment === "development") {
-  const compiler = webpack(devConfig);
-  const middleware = webpackMiddleware(compiler, {
-    publicPath: devConfig.output.publicPath,
-    contentBase: 'src',
-    stats: {
-      colors: true,
-      hash: false,
-      timings: true,
-      chunks: false,
-      chunkModules: false,
-      modules: false
-    }
-  });
-
-  app.use(middleware);
-  app.use(webpackHotMiddleware(compiler));
   app.get('*', function response(req, res) {
     res.write(middleware.fileSystem.readFileSync(path.join(__dirname, 'src/index.html')));
     res.end();
   });
 } else {
-  app.use(express.static(__dirname + '/src'));
   app.get('*', function response(req, res) {
     res.sendFile(path.join(__dirname, 'src/index.html'));
   });
