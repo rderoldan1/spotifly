@@ -16,6 +16,11 @@ router.get('/login', function(req, res, next) {
   res.redirect(authorizeURL);
 });
 
+router.get('/logout', function(req, res, next) {
+  res.clearCookie('access_token')
+  res.redirect('/');
+});
+
 router.get('/callback', function(req, res, next) {
   const code = req.query.code;
 
