@@ -28,6 +28,8 @@ Tiny app using React to fetch data from spotify, You can check the live version 
 3. Export the environment variables, be sure to set `ENVIRONMENT=production`
 4. on your server, run `node app.js` 
 
+![alt](https://github.com/rderoldan1/spotifly/raw/master/imgs/4.png)
 ![alt](https://github.com/rderoldan1/spotifly/raw/master/imgs/1.png)
 ![alt](https://github.com/rderoldan1/spotifly/raw/master/imgs/2.png)
 ![alt](https://github.com/rderoldan1/spotifly/raw/master/imgs/3.png)
+
