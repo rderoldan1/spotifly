@@ -58,7 +58,7 @@
   },
   "scripts": {
     "server": "nodemon app.js",
-    "react": "webpack",
+    "react": "webpack --config ./config/webpack.development.config.js  --hot ",
     "build": "rimraf dist && cross-env NODE_ENV=production webpack --config ./config/webpack.production.config.js --progress --profile --colors",
     "start": "concurrently \"npm run react\" \"npm run server\""
   }

@@ -19,7 +19,8 @@ class Current extends Component {
       name: "", 
       duration: 1,
       artist: "",
-      image: ""
+      image: "",
+      album: ""
     };
     this.getCurrentSong = this.getCurrentSong.bind(this);
   }
@@ -29,7 +30,6 @@ class Current extends Component {
   }
 
   getCurrentSong = () => {
-    console.log(this.state.accessToken)
     spotifyApi.setAccessToken(this.state.accessToken);
 
     spotifyApi.getMyCurrentPlayingTrack().then(data => {
@@ -38,29 +38,34 @@ class Current extends Component {
           name: item.name, 
           duration: item.duration_ms,
           artist: item.album.artists[0].name,
-          image: item.album.images[0].url
+          image: item.album.images[0].url,
+          album: item.album.name
       })
     })
   }
 
+  msToTime = (duration) => {
+    var seconds = parseInt((duration / 1000) % 60),
+      minutes = parseInt((duration / (1000 * 60)) % 60);
+  
+    minutes = (minutes < 10) ? "0" + minutes : minutes;
+    seconds = (seconds < 10) ? "0" + seconds : seconds;
+  
+    return minutes + ":" + seconds;
+  }
+
   render() {
     return (
-      <div>
-        <table>
-          <tbody>
-          <tr>
-            <td>
-              <img src={this.state.image} alt="Album"/>
-            </td>
-            <td>
-              <p>{this.state.album}</p> 
-              <p>{this.state.name}</p>
-              <p>{this.state.duration / 1000 / 60}</p>
-              {this.state.duration}
-            </td>
-          </tr>
-          </tbody>
-        </table>
+      <div className="currentSong">
+        <div className="cover pull-left col-md-2">
+        <img src={this.state.image} alt="Album"/>
+        </div>
+        <div className="info pull-left col-md-2">
+          <p>{this.state.name}</p>
+          <p>Artist: {this.state.artist}</p>
+          <p>Album: {this.state.album}</p> 
+          <p>{this.msToTime(this.state.duration)}</p>
+        </div>
       </div>
     )    
   }

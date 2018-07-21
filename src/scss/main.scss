@@ -1,11 +1,7 @@
 @import 'fonts';
 
-* {
-  box-sizing: border-box;
-}
-
 body {
-  background: #ececec;
+  background: #262626;
 }
 
 .home {
@@ -13,7 +9,131 @@ body {
   width: 520px;
   height: auto;
   margin: 50px auto;
-  background: #fff;
+  background: black;
   border-radius: 5px;
   padding: 15px 50px;
+}
+
+
+#app {
+  color: white;
+
+  .header {
+    width: 100%;
+    height: 65px;
+    ul {
+      li {
+        list-style: none;
+        display: inline-block;
+        width: 100px;
+        
+        &:last-child{
+          float: right;
+        }
+
+        a {
+          color: white;
+          text-decoration: none;
+          font-size: 14px; 
+          &:hover {
+            text-decoration: underline
+          }
+        }
+      }
+    }
+
+    hr {
+      border: 1px solid greenyellow;
+    }
+  }
+
+  .main {
+    width: 70%;
+    margin: 50px auto;
+
+
+    .searchComponent {
+      .searchInput {
+        label {
+          display: block;
+          text-align: center;
+          line-height: 150%;
+          font-size: 40px;
+        }
+
+        input {
+          width: 100%;
+          height: 40px;
+          font-size: 25px;
+          padding: 15px
+        }
+      }
+
+      .emptyResults {
+        text-align: right;
+      }
+
+      .searchResults {
+        table {
+          width: 100%;
+          margin-top: 29px;
+          thead {
+            tr {
+              height: 20px;
+              border-bottom: 1px solid #f2f2f2;
+              th {
+                width: 33%;
+                color: gainsboro;
+                text-align: left;
+                line-height: 1.4;
+                padding-top: 21px;
+                padding-bottom: 21px;
+              }
+            }
+          }
+
+          tbody {
+            tr {
+              height: 20px;
+              border-bottom: 1px solid #f2f2f2;;
+              &:hover {
+                background-color: #1e1e1e;
+              }
+              td {
+                color: gainsboro;
+                font-size: 13px;
+                text-align: left;
+                line-height: 1.1;
+                padding-top: 13px;
+                padding-bottom: 13px;
+              }
+            }
+          }  
+        }
+      }
+    }
+    .currentSong {
+      .pull-left {
+        float: left;
+      }
+
+      .col-md-2 {
+        width: 45%;
+        padding: 20px;
+      }
+      .cover {
+        img {
+          width: 400px;
+          min-width: 400px;
+          border-radius: 5px;
+          padding: 2px;
+          border: 1px solid gainsboro;
+        }
+      }
+
+      .info {
+       padding: 10px; 
+      }
+    }
+  }
 }

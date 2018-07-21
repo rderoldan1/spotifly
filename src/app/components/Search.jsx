@@ -40,10 +40,10 @@ class Search extends Component {
 
   render() {
     return (
-      <div>
+      <div className="searchComponent">
         <div className="searchInput">
-          <label>Spotify Search:</label>
-          <input type="text" value={this.state.term} onChange={this.handleChange} />
+          <label>Spotify Search:</label><br/>
+          <input type="text" value={this.state.term} onChange={this.handleChange} placeholder="Search by song, artist or album."/>
         </div>
         {this.state.tracks.length === 0 ? (<Empty />) : (<Table tracks={this.state.tracks}/>) }
         
